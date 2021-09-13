@@ -17,7 +17,7 @@
 		"commands": [
 			{
 				"command": "a-stock-tip.helloWorld",
-				"title": "Hello World"
+				"title": "A Stock Tip"
 			}
 		]
 	},
