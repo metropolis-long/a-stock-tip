@@ -18,8 +18,12 @@ export function activate(context: vscode.ExtensionContext) {
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Hi，A股提示助手祝您发大财!');
 	});
+	let dpath = vscode.commands.registerCommand('a-stock-tip.getCurrentFilePath', (uri) => {
+		vscode.window.showInformationMessage(`当前文件(夹)路径是：${uri ? uri.path : '空'}`);
+	})
 
 	context.subscriptions.push(disposable);
+	context.subscriptions.push(dpath);
 }
 
 // this method is called when your extension is deactivated

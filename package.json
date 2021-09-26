@@ -10,7 +10,9 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:a-stock-tip.helloWorld"
+		"onCommand:a-stock-tip.helloWorld",
+		"onCommand:a-stock-tip.getCurrentFilePath",
+		"onLanguage:javascript"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -18,8 +20,26 @@
 			{
 				"command": "a-stock-tip.helloWorld",
 				"title": "A Stock Tip"
+			},{
+				"command": "a-stock-tip.getCurrentFilePath",
+				"title": "获取文件路径"
 			}
-		]
+		],
+		"menus": {
+			"editor/context": [
+                {
+                    "when": "editorFocus",
+                    "command": "a-stock-tip.getCurrentFilePath",
+                    "group": "navigation"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "command": "a-stock-tip.getCurrentFilePath",
+                    "group": "navigation"
+                }
+            ]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run package",
